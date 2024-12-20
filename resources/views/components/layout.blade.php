@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="bg-body bg-no-repeat bg-cover bg-center">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,22 +26,10 @@
         ::-webkit-scrollbar-thumb:hover {
           background: #1c0949a1;
         }
-        .bg-headerImage{
-            background-image: url('../Assets/01_Home_Page/Home_Section_1/Galaxy_Background.jpg');
-        }.bg-homeSection3{
-            background-image: url('../Assets/01_Home_Page/Home_Section_3/section3.png')
-        }.bg-sevicesblueBackdrop{
-            background-image: url('../Assets/03_Services Page/backdrop/universe.png');
-        }
-        .bg-Event{
-            background-image: url('../Assets/01_Home_Page/Home_Section_4/Home_Section4_Img.png');
-        }.bg-aboutAIRCOM{
-            background-image: url('../Assets/02_About Page/About_Section  4/Section_04 - About AIR+ Community.png');
-        }
         </style>
     @vite('resources/css/app.css')
 </head>
-<body class="body bg-headerImage bg-top bg-no-repeat bg-cover bg-fixed text-gray-300 overflow-x-hidden overflow-y-scroll scroll-smooth tracking-wide min-w-[20rem]" style="background-position-y: 20%;">
+<body class="body bg-body bg-no-repeat text-gray-300 overflow-x-hidden overflow-y-scroll scroll-smooth tracking-wide min-w-[20rem] w-full h-full max-w-[2000px] mx-auto bg-[center_-15%] md:bg-[center_-30%]">
     @yield('body')
 
     <script src="{{asset('Assets/js/animation.js')}}"></script>

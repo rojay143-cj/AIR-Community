@@ -23,161 +23,161 @@ $(document).ready(function () {
         }
     });
 });
-$(document).on("mousemove scroll", function (event) {
-    const offset = (event.clientY / $(window).height()) * 600;
-    $("#planets img").css("transform", "translateY(" + offset + "px)");
+// $(document).on("mousemove scroll", function (event) {
+//     const offset = (event.clientY / $(window).height()) * 600;
+//     $("#planets img").css("transform", "translateY(" + offset + "px)");
 
-    if (event.type === "scroll") {
-        const scrollPosition = window.scrollY;
-        const parallaxSpeed = 0.2;
-        const backgroundPosition = 20 + scrollPosition * parallaxSpeed;
-        $("#header").css("background-position-y", backgroundPosition + "%");
-    }
-});
-$(document).on("scroll", function () {
-    const scrollPosition = $(window).scrollTop();
-    const windowHeight = $(window).height();
+//     if (event.type === "scroll") {
+//         const scrollPosition = window.scrollY;
+//         const parallaxSpeed = 0.2;
+//         const backgroundPosition = 20 + scrollPosition * parallaxSpeed;
+//         $("#header").css("background-position-y", backgroundPosition + "%");
+//     }
+// });
+// $(document).on("scroll", function () {
+//     const scrollPosition = $(window).scrollTop();
+//     const windowHeight = $(window).height();
 
-    // Calculate offsets based on scroll position
-    const planet1Offset = (scrollPosition / windowHeight) * 550;
-    const planet2Offset = (scrollPosition / windowHeight) * 650;
-    const planet3Offset = (scrollPosition / windowHeight) * 650;
-    const planet4Offset = (scrollPosition / windowHeight) * 500;
-    const planet5Offset = (scrollPosition / windowHeight) * 650;
+//     // Calculate offsets based on scroll position
+//     const planet1Offset = (scrollPosition / windowHeight) * 550;
+//     const planet2Offset = (scrollPosition / windowHeight) * 650;
+//     const planet3Offset = (scrollPosition / windowHeight) * 650;
+//     const planet4Offset = (scrollPosition / windowHeight) * 500;
+//     const planet5Offset = (scrollPosition / windowHeight) * 650;
 
-    // Apply the new positions with a smoother transition
-    $("#planet1 img").css("transform", "translateY(" + planet1Offset + "px)");
-    $("#planet2 img").css("transform", "translateY(" + planet2Offset + "px)");
-    $("#planet3 img").css("transform", "translateY(" + planet3Offset + "px)");
-    $("#planet4 img").css("transform", "translateY(" + planet4Offset + "px)");
-    $("#planet5 img").css("transform", "translateY(" + planet5Offset + "px)");
-});
+//     // Apply the new positions with a smoother transition
+//     $("#planet1 img").css("transform", "translateY(" + planet1Offset + "px)");
+//     $("#planet2 img").css("transform", "translateY(" + planet2Offset + "px)");
+//     $("#planet3 img").css("transform", "translateY(" + planet3Offset + "px)");
+//     $("#planet4 img").css("transform", "translateY(" + planet4Offset + "px)");
+//     $("#planet5 img").css("transform", "translateY(" + planet5Offset + "px)");
+// });
 
 
-$(document).ready(function () {
-    // Intersection Observer callback function
-    const Observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if(entry.isIntersecting){
-                if(entry.target.classList.contains('right')) {
-                    entry.target.classList.add('left');
-                }
-                if(entry.target.classList.contains('rightslow')) {
-                    entry.target.classList.add('leftslow');
-                }
-                if(entry.target.classList.contains('topfast')) {
-                    entry.target.classList.add('bottomfast');
-                }
-                if(entry.target.classList.contains('topslow')) {
-                    entry.target.classList.add('bottomslow');
-                }
-                if(entry.target.classList.contains('bottomTop')) {
-                    entry.target.classList.add('bottom0');
-                }
-                if(entry.target.classList.contains('rightLeft')) {
-                    entry.target.classList.add('right0');
-                }
-                if(entry.target.classList.contains('planetScale')) {
-                    entry.target.classList.add('planetScale');
-                }
-                if(entry.target.classList.contains('grow0')) {
-                    entry.target.classList.add('grow1');
-                }
+// $(document).ready(function () {
+//     // Intersection Observer callback function
+//     const Observer = new IntersectionObserver((entries) => {
+//         entries.forEach((entry) => {
+//             if(entry.isIntersecting){
+//                 if(entry.target.classList.contains('right')) {
+//                     entry.target.classList.add('left');
+//                 }
+//                 if(entry.target.classList.contains('rightslow')) {
+//                     entry.target.classList.add('leftslow');
+//                 }
+//                 if(entry.target.classList.contains('topfast')) {
+//                     entry.target.classList.add('bottomfast');
+//                 }
+//                 if(entry.target.classList.contains('topslow')) {
+//                     entry.target.classList.add('bottomslow');
+//                 }
+//                 if(entry.target.classList.contains('bottomTop')) {
+//                     entry.target.classList.add('bottom0');
+//                 }
+//                 if(entry.target.classList.contains('rightLeft')) {
+//                     entry.target.classList.add('right0');
+//                 }
+//                 if(entry.target.classList.contains('planetScale')) {
+//                     entry.target.classList.add('planetScale');
+//                 }
+//                 if(entry.target.classList.contains('grow0')) {
+//                     entry.target.classList.add('grow1');
+//                 }
 
-                // For phones from about us page
-                if(entry.target.classList.contains('phone1')) {
-                    entry.target.classList.add('phoneShow');
-                }
-                if (entry.target.classList.contains('phone2')) {
-                    entry.target.classList.add('phoneShow2');
-                }
+//                 // For phones from about us page
+//                 if(entry.target.classList.contains('phone1')) {
+//                     entry.target.classList.add('phoneShow');
+//                 }
+//                 if (entry.target.classList.contains('phone2')) {
+//                     entry.target.classList.add('phoneShow2');
+//                 }
 
-                if (entry.target.classList.contains('growdefault_01')) {
-                    entry.target.classList.add('growslow_01');
-                }if (entry.target.classList.contains('growdefault_02')) {
-                    entry.target.classList.add('growslow_02');
-                }if (entry.target.classList.contains('growdefault_03')) {
-                    entry.target.classList.add('growslow_03');
-                }
+//                 if (entry.target.classList.contains('growdefault_01')) {
+//                     entry.target.classList.add('growslow_01');
+//                 }if (entry.target.classList.contains('growdefault_02')) {
+//                     entry.target.classList.add('growslow_02');
+//                 }if (entry.target.classList.contains('growdefault_03')) {
+//                     entry.target.classList.add('growslow_03');
+//                 }
 
-            } else {
-                if(entry.target.classList.contains('right')) {
-                    entry.target.classList.remove('left');
-                }
-                if(entry.target.classList.contains('rightslow')) {
-                    entry.target.classList.remove('leftslow');
-                }
-                if(entry.target.classList.contains('topfast')) {
-                    entry.target.classList.remove('bottomfast');
-                }
-                if(entry.target.classList.contains('topslow')) {
-                    entry.target.classList.remove('bottomslow');
-                }
-                if(entry.target.classList.contains('bottomTop')) {
-                    entry.target.classList.remove('bottom0');
-                }
-                if(entry.target.classList.contains('rightLeft')) {
-                    entry.target.classList.remove('right0');
-                }
-                if(entry.target.classList.contains('grow0')) {
-                    entry.target.classList.remove('grow1');
-                }
+//             } else {
+//                 if(entry.target.classList.contains('right')) {
+//                     entry.target.classList.remove('left');
+//                 }
+//                 if(entry.target.classList.contains('rightslow')) {
+//                     entry.target.classList.remove('leftslow');
+//                 }
+//                 if(entry.target.classList.contains('topfast')) {
+//                     entry.target.classList.remove('bottomfast');
+//                 }
+//                 if(entry.target.classList.contains('topslow')) {
+//                     entry.target.classList.remove('bottomslow');
+//                 }
+//                 if(entry.target.classList.contains('bottomTop')) {
+//                     entry.target.classList.remove('bottom0');
+//                 }
+//                 if(entry.target.classList.contains('rightLeft')) {
+//                     entry.target.classList.remove('right0');
+//                 }
+//                 if(entry.target.classList.contains('grow0')) {
+//                     entry.target.classList.remove('grow1');
+//                 }
 
-                // For phones from about us page
-                if(entry.target.classList.contains('phone1')) {
-                    entry.target.classList.remove('phoneShow');
-                }
-                if(entry.target.classList.contains('phone2')) {
-                    entry.target.classList.remove('phoneShow2');
-                }
-                if (entry.target.classList.contains('growdefault_01')) {
-                    entry.target.classList.remove('growslow_01');
-                }if (entry.target.classList.contains('growdefault_02')) {
-                    entry.target.classList.add('growslow_02');
-                }if (entry.target.classList.contains('growdefault_03')) {
-                    entry.target.classList.add('growslow_03');
-                }
-            }
-        });
-    });
-    //Right animation observer
-    const hiddenElementsRight = document.querySelectorAll('.right');
-    hiddenElementsRight.forEach((el) => Observer.observe(el));
+//                 // For phones from about us page
+//                 if(entry.target.classList.contains('phone1')) {
+//                     entry.target.classList.remove('phoneShow');
+//                 }
+//                 if(entry.target.classList.contains('phone2')) {
+//                     entry.target.classList.remove('phoneShow2');
+//                 }
+//                 if (entry.target.classList.contains('growdefault_01')) {
+//                     entry.target.classList.remove('growslow_01');
+//                 }if (entry.target.classList.contains('growdefault_02')) {
+//                     entry.target.classList.add('growslow_02');
+//                 }if (entry.target.classList.contains('growdefault_03')) {
+//                     entry.target.classList.add('growslow_03');
+//                 }
+//             }
+//         });
+//     });
+//     //Right animation observer
+//     const hiddenElementsRight = document.querySelectorAll('.right');
+//     hiddenElementsRight.forEach((el) => Observer.observe(el));
 
-    const hiddenElementsRightslow = document.querySelectorAll('.rightslow');
-    hiddenElementsRightslow.forEach((el) => Observer.observe(el));
-    //Top animation observer
-    const hiddenElementsTop = document.querySelectorAll('.topfast');
-    hiddenElementsTop.forEach((el) => Observer.observe(el));
+//     const hiddenElementsRightslow = document.querySelectorAll('.rightslow');
+//     hiddenElementsRightslow.forEach((el) => Observer.observe(el));
+//     //Top animation observer
+//     const hiddenElementsTop = document.querySelectorAll('.topfast');
+//     hiddenElementsTop.forEach((el) => Observer.observe(el));
 
-    const hiddenElementsslow = document.querySelectorAll('.topslow');
-    hiddenElementsslow.forEach((el) => Observer.observe(el));
+//     const hiddenElementsslow = document.querySelectorAll('.topslow');
+//     hiddenElementsslow.forEach((el) => Observer.observe(el));
 
-    const bottomTop = document.querySelectorAll('.bottomTop');
-    bottomTop.forEach((el) => Observer.observe(el));
+//     const bottomTop = document.querySelectorAll('.bottomTop');
+//     bottomTop.forEach((el) => Observer.observe(el));
 
-    const rightLeft = document.querySelectorAll('.rightLeft');
-    rightLeft.forEach((el) => Observer.observe(el));
+//     const rightLeft = document.querySelectorAll('.rightLeft');
+//     rightLeft.forEach((el) => Observer.observe(el));
 
-    const grow0 = document.querySelectorAll('.grow0');
-    grow0.forEach((el) => Observer.observe(el));
+//     const grow0 = document.querySelectorAll('.grow0');
+//     grow0.forEach((el) => Observer.observe(el));
 
-    const slideUp1 = document.querySelectorAll('.phone1');
-    slideUp1.forEach((el) => Observer.observe(el));
+//     const slideUp1 = document.querySelectorAll('.phone1');
+//     slideUp1.forEach((el) => Observer.observe(el));
 
-    const slideUp2 = document.querySelectorAll('.phone2');
-    slideUp2.forEach((el) => Observer.observe(el));
+//     const slideUp2 = document.querySelectorAll('.phone2');
+//     slideUp2.forEach((el) => Observer.observe(el));
 
-    const appeaarance = document.querySelectorAll('.appeaar0');
-    appeaarance.forEach((el) => Observer.observe(el));
+//     const appeaarance = document.querySelectorAll('.appeaar0');
+//     appeaarance.forEach((el) => Observer.observe(el));
 
-    const default_01 = document.querySelectorAll('.growdefault_01');
-    default_01.forEach((el) => Observer.observe(el));
-    const default_02 = document.querySelectorAll('.growdefault_02');
-    default_02.forEach((el) => Observer.observe(el));
-    const default_03 = document.querySelectorAll('.growdefault_03');
-    default_03.forEach((el) => Observer.observe(el));
-});
+//     const default_01 = document.querySelectorAll('.growdefault_01');
+//     default_01.forEach((el) => Observer.observe(el));
+//     const default_02 = document.querySelectorAll('.growdefault_02');
+//     default_02.forEach((el) => Observer.observe(el));
+//     const default_03 = document.querySelectorAll('.growdefault_03');
+//     default_03.forEach((el) => Observer.observe(el));
+// });
 
 
 // About Us
@@ -219,92 +219,6 @@ $(document).ready(function () {
             default:
                 break;
         }
-
-        // Apply rotation for all orbits based on the clicked index
-        switch (index) {
-            case 0:
-                $('.orbit1').css('transform', 'rotate(45deg)');
-                $('.orbit2').css('transform', 'rotate(-45deg)');
-                $('.orbit3').css('transform', 'rotate(90deg)');
-                $('.orbit4').css('transform', 'rotate(-90deg)');
-                $('.orbit5').css('transform', 'rotate(180deg)');
-                $('.orbit6').css('transform', 'rotate(-180deg)');
-                $('.orbit7').css('transform', 'rotate(360deg)');
-                $('.orbit8').css('transform', 'rotate(-360deg)');
-                break;
-            case 1:
-                $('.orbit1').css('transform', 'rotate(30deg)');
-                $('.orbit2').css('transform', 'rotate(-30deg)');
-                $('.orbit3').css('transform', 'rotate(60deg)');
-                $('.orbit4').css('transform', 'rotate(-60deg)');
-                $('.orbit5').css('transform', 'rotate(120deg)');
-                $('.orbit6').css('transform', 'rotate(-120deg)');
-                $('.orbit7').css('transform', 'rotate(240deg)');
-                $('.orbit8').css('transform', 'rotate(-240deg)');
-                break;
-            case 2:
-                $('.orbit1').css('transform', 'rotate(15deg)');
-                $('.orbit2').css('transform', 'rotate(-15deg)');
-                $('.orbit3').css('transform', 'rotate(30deg)');
-                $('.orbit4').css('transform', 'rotate(-30deg)');
-                $('.orbit5').css('transform', 'rotate(60deg)');
-                $('.orbit6').css('transform', 'rotate(-60deg)');
-                $('.orbit7').css('transform', 'rotate(120deg)');
-                $('.orbit8').css('transform', 'rotate(-120deg)');
-                break;
-            case 3:
-                $('.orbit1').css('transform', 'rotate(60deg)');
-                $('.orbit2').css('transform', 'rotate(-60deg)');
-                $('.orbit3').css('transform', 'rotate(120deg)');
-                $('.orbit4').css('transform', 'rotate(-120deg)');
-                $('.orbit5').css('transform', 'rotate(240deg)');
-                $('.orbit6').css('transform', 'rotate(-240deg)');
-                $('.orbit7').css('transform', 'rotate(480deg)');
-                $('.orbit8').css('transform', 'rotate(-480deg)');
-                break;
-            case 4:
-                $('.orbit1').css('transform', 'rotate(90deg)');
-                $('.orbit2').css('transform', 'rotate(-90deg)');
-                $('.orbit3').css('transform', 'rotate(180deg)');
-                $('.orbit4').css('transform', 'rotate(-180deg)');
-                $('.orbit5').css('transform', 'rotate(360deg)');
-                $('.orbit6').css('transform', 'rotate(-360deg)');
-                $('.orbit7').css('transform', 'rotate(720deg)');
-                $('.orbit8').css('transform', 'rotate(-720deg)');
-                break;
-            case 5:
-                $('.orbit1').css('transform', 'rotate(120deg)');
-                $('.orbit2').css('transform', 'rotate(-120deg)');
-                $('.orbit3').css('transform', 'rotate(240deg)');
-                $('.orbit4').css('transform', 'rotate(-240deg)');
-                $('.orbit5').css('transform', 'rotate(480deg)');
-                $('.orbit6').css('transform', 'rotate(-480deg)');
-                $('.orbit7').css('transform', 'rotate(960deg)');
-                $('.orbit8').css('transform', 'rotate(-960deg)');
-                break;
-            case 6:
-                $('.orbit1').css('transform', 'rotate(150deg)');
-                $('.orbit2').css('transform', 'rotate(-150deg)');
-                $('.orbit3').css('transform', 'rotate(300deg)');
-                $('.orbit4').css('transform', 'rotate(-300deg)');
-                $('.orbit5').css('transform', 'rotate(600deg)');
-                $('.orbit6').css('transform', 'rotate(-600deg)');
-                $('.orbit7').css('transform', 'rotate(1200deg)');
-                $('.orbit8').css('transform', 'rotate(-1200deg)');
-                break;
-            case 7:
-                $('.orbit1').css('transform', 'rotate(180deg)');
-                $('.orbit2').css('transform', 'rotate(-180deg)');
-                $('.orbit3').css('transform', 'rotate(360deg)');
-                $('.orbit4').css('transform', 'rotate(-360deg)');
-                $('.orbit5').css('transform', 'rotate(720deg)');
-                $('.orbit6').css('transform', 'rotate(-720deg)');
-                $('.orbit7').css('transform', 'rotate(1440deg)');
-                $('.orbit8').css('transform', 'rotate(-1440deg)');
-                break;
-            default:
-                break;
-        }
     });
 });
 
@@ -330,36 +244,36 @@ $(document).ready(function () {
 });
 
 
-$(document).ready(function () {
-    const rotationIncrement = 90;
-    const baseSpeed = 0.5;
-    const speedFactor = 0.2;
-    const orbits = document.querySelectorAll('.orbit');
-    const tabs = document.querySelectorAll('.tab');
-    const contents = document.querySelectorAll('.content');
-    let rotation = 0;
-    let activeTab = tabs.length;
-    tabs[activeTab - 1].classList.add('active');
-    contents[activeTab - 1].classList.add('active');
-    contents[activeTab - 1].classList.remove('hidden');
-    tabs.forEach((tab) => {
-        tab.addEventListener('click', () => {
-            tabs.forEach(t => t.classList.remove('active'));
-            contents.forEach(c => {
-                c.classList.remove('active');
-                c.classList.add('hidden');
-            });
-            tab.classList.add('active');
-            const selectedContent = document.getElementById(`content${tab.dataset.tab}`);
-            selectedContent.classList.add('active');
-            selectedContent.classList.remove('hidden');
-            rotation += rotationIncrement;
-            orbits.forEach((orbit, i) => {
-                const speed = baseSpeed + i * speedFactor;
-                orbit.style.transition = `transform ${speed}s ease-in-out`;
-                orbit.style.transform = `translate(-50%, -50%) rotate(${rotation + parseFloat(getComputedStyle(orbit).getPropertyValue('--initial-rotation'))}deg)`;
-            });
-            activeTab = parseInt(tab.dataset.tab, 10);
-        });
-    });
-});
+// $(document).ready(function () {
+//     const rotationIncrement = 90;
+//     const baseSpeed = 0.5;
+//     const speedFactor = 0.2;
+//     const orbits = document.querySelectorAll('.orbit');
+//     const tabs = document.querySelectorAll('.tab');
+//     const contents = document.querySelectorAll('.content');
+//     let rotation = 0;
+//     let activeTab = tabs.length;
+//     tabs[activeTab - 1].classList.add('active');
+//     contents[activeTab - 1].classList.add('active');
+//     contents[activeTab - 1].classList.remove('hidden');
+//     tabs.forEach((tab) => {
+//         tab.addEventListener('click', () => {
+//             tabs.forEach(t => t.classList.remove('active'));
+//             contents.forEach(c => {
+//                 c.classList.remove('active');
+//                 c.classList.add('hidden');
+//             });
+//             tab.classList.add('active');
+//             const selectedContent = document.getElementById(`content${tab.dataset.tab}`);
+//             selectedContent.classList.add('active');
+//             selectedContent.classList.remove('hidden');
+//             rotation += rotationIncrement;
+//             orbits.forEach((orbit, i) => {
+//                 const speed = baseSpeed + i * speedFactor;
+//                 orbit.style.transition = `transform ${speed}s ease-in-out`;
+//                 orbit.style.transform = `translate(-50%, -50%) rotate(${rotation + parseFloat(getComputedStyle(orbit).getPropertyValue('--initial-rotation'))}deg)`;
+//             });
+//             activeTab = parseInt(tab.dataset.tab, 10);
+//         });
+//     });
+// });

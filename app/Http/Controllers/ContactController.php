@@ -26,9 +26,9 @@ class ContactController extends Controller
         $subject = $validate['inquiry'];
         $email = Mail::to($toEmail)->send(new Mailer($message, $subject, $name, $organization, $email , $number));
         if($email){
-            return redirect()->route('contact')->with('success', 'Email sent successfully');
+            return redirect()->route('home')->with('success', 'Email sent successfully');
         }else{
-            return redirect()->route('contact')->with('error', 'Email not sent');
+            return redirect()->route('home')->with('error', 'Email not sent');
         }
     }
 }

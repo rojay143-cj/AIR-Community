@@ -1,11 +1,14 @@
 @extends('components.layout')
 @section('title', 'Home - AirDrumming Community')
 @section('body')
-    <div class="container-fluid w-full">
+    <div class="container-fluid w-full h-full">
         @include('sections.home_page.header')
-        @include('sections.home_page.section_01')
-        @include('sections.home_page.section_02')
-        @include('sections.home_page.section_03')
-        @include('sections.about_page.section_05')
+        @include('sections.home_page.about')
+        @include('sections.home_page.selection')
+        @include('sections.home_page.contact')
+        @include('sections.home_page.footer')
+    </div>
+    <div class="absolute">
+        @include('components.success_error')
     </div>
 @endsection
